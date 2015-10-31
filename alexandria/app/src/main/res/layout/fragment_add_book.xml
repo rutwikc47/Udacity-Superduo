@@ -1,0 +1,162 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="it.jaschke.alexandria.Fragments.AddBook"
+    android:background="#000000">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal|top">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:id="@+id/eancontainer"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:minEms="@integer/ean_width"
+                android:id="@+id/ean"
+                android:saveEnabled="true"
+                android:maxLength="@integer/ean_size"
+                android:maxLines="1"
+                android:hint="@string/input_hint"
+                android:textColorHint="@color/hint"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_button"
+                android:id="@+id/scan_button"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/eancontainer"
+            android:id="@+id/rl_before_book_load"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/addbook"
+                android:scaleType="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/eancontainer"
+            android:id="@+id/rl_after_book_load"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:id="@+id/bookTitle"/>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="240dp"
+                android:layout_below="@+id/bookTitle"
+                android:id="@+id/bookCover"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/bookCover"
+                android:layout_below="@id/bookTitle"
+                android:layout_marginTop="120dp"
+                android:textSize="19sp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/bookSubTitle"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:hint="@string/subtitle_na"
+                android:textColorHint="@color/hint"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bookCover"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:id="@+id/authors"
+                android:textColor="@color/white"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/authors"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:id="@+id/categories"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:text="@string/cancel_button"
+                    android:layout_weight="1"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:id="@+id/delete_button"
+                    android:drawableLeft="@drawable/ic_action_discard"
+                    android:visibility="invisible"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:text="@string/nextbutton"
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:id="@+id/save_button"
+                    android:drawableLeft="@drawable/ic_action_accept"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_gravity="bottom"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
